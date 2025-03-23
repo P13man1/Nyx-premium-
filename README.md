@@ -5,3 +5,5 @@ This tool is for education purpose only , the owner of this software is not resp
 after running the tool from ur terminal 
 
 use the command  help ] to find all commands for using the tool 
+
+pip3 install -r requirements.txt
