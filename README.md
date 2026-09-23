@@ -1,34 +1,59 @@
-# Personal Portfolio
+# FIOK — Site officiel
 
-A fast, responsive single-page portfolio site — plain HTML, CSS, and JavaScript, no build step. Deploys to Vercel as static content.
+Site vitrine de **FIOK**, artiste togolais. React + Vite, déployé sur Vercel,
+avec une base de données **Neon (Postgres)** pour la newsletter, les messages
+de contact et le compteur de visites/lectures.
 
-## Structure
+## ✏️ Modifier le contenu
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Page content and structure |
-| `styles.css` | Styling, light/dark themes, layout |
-| `script.js` | Theme toggle, scroll animations, footer year |
-| `vercel.json` | Static deployment config |
+Presque tout est centralisé dans **`src/lib/content.js`** :
 
-## Customize
+- Nom, rôle, accroche, tags
+- Bio (« À propos »)
+- Liste des morceaux
+- Lecteurs YouTube / Spotify (`embeds`)
+- Liens des réseaux sociaux (`socials`)
+- Galerie d'images
+- Email de contact / booking
 
-Everything you need to edit lives in `index.html`:
+Les images sont dans **`public/`** :
+`fiok-portrait.jpg`, `art-hands.jpg`, `art-violin.jpg`,
+plus la vidéo d'intro `intro.mp4` et son image `intro-poster.jpg`.
 
-- Replace **"Your Name"**, the tagline, and the About paragraphs.
-- Update the three **Work** cards with your own projects and links.
-- Set your email in the **Contact** section (`mailto:you@example.com`) and the GitHub / LinkedIn / X links.
-- Colors and fonts live at the top of `styles.css` (the `:root` variables).
+## 🧩 Structure
 
-## Run locally
+| Dossier / fichier | Rôle |
+|---|---|
+| `src/components/` | Sections React (Hero, About, Music, Gallery, Social, Connect, Footer, IntroOverlay) |
+| `src/lib/content.js` | **Tout le contenu éditable** |
+| `src/lib/hooks.js` | Animations au scroll + appels API |
+| `api/` | Fonctions serverless Vercel (Neon) |
+| `public/` | Images et vidéo |
 
-Just open `index.html` in a browser, or serve the folder:
+## 🗄️ Base de données (Neon)
+
+Le site marche sans base (les formulaires affichent juste un message).
+Pour activer la newsletter / le contact / les compteurs, il faut une variable
+d'environnement `DATABASE_URL` (fournie par Neon).
+
+Sur Vercel : **Storage → Marketplace → Neon → Connect**. La variable
+`DATABASE_URL` est injectée automatiquement. Les tables
+(`subscribers`, `messages`, `counters`) sont créées toutes seules au premier appel.
+
+### Endpoints API
+
+- `POST /api/subscribe` — `{ email }` → inscription newsletter
+- `POST /api/contact` — `{ name, email, message }` → message de booking
+- `GET  /api/stats` — renvoie `{ visits, plays }`
+- `POST /api/stats` — `{ type: "visit" | "play" }` → incrémente
+
+## 💻 En local
 
 ```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # build de production dans dist/
 ```
 
-## Deploy
-
-Push to the connected branch and Vercel builds it automatically. No framework or build command needed — it's served as static files.
+Les fonctions `api/` ne tournent qu'une fois déployées sur Vercel
+(ou via `vercel dev`).
