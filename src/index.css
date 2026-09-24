@@ -441,12 +441,33 @@ img { display: block; max-width: 100%; }
 .feed-label svg { font-size: 1.3rem; color: var(--red); }
 .tiktok-wrap {
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--bg-2);
   border-radius: 10px;
   overflow: hidden;
-  min-height: 560px;
 }
-.tiktok-wrap iframe { width: 100% !important; }
+.tiktok-wrap iframe { width: 100% !important; border: 0; }
+.tt-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+  min-height: 420px;
+  padding: 48px 24px;
+}
+.tt-fallback svg { font-size: 3.4rem; color: var(--ink); }
+.tt-handle { font-family: "Anton", sans-serif; font-size: 1.5rem; letter-spacing: 0.03em; }
+.tt-video {
+  max-width: 340px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-2);
+}
+.tt-video iframe { width: 100%; height: 100%; border: 0; }
 .yt-wrap {
   position: relative;
   aspect-ratio: 16/9;
@@ -476,5 +497,5 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 900px) {
   .feeds { grid-template-columns: 1fr; }
-  .tiktok-wrap { min-height: 640px; }
+  .tt-fallback { min-height: 460px; }
 }

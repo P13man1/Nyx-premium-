@@ -22,10 +22,13 @@ export const tracks = [
   { title: "Titre du morceau #4", meta: "Freestyle · 2024", url: "#" },
 ];
 
-// Lecteurs intégrés. Colle un ID de vidéo YouTube pour l'afficher.
+// Lecteurs intégrés.
 export const embeds = {
   youtubeVideoId: null, // ex: "dQw4w9WgXcQ"
   spotifyUri: null, // ex: "track/xxxxxxxx"
+  // Colle l'ID d'UNE vidéo TikTok pour un lecteur garanti (le chiffre
+  // à la fin du lien: tiktok.com/@fiok_228/video/1234567890 → "1234567890").
+  tiktokVideoId: null,
 };
 
 // Nom d'utilisateur TikTok (sans @) — sert à afficher le vrai profil.

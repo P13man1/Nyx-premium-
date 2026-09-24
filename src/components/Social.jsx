@@ -42,7 +42,7 @@ export default function Social() {
               <PlatformIcon name="tiktok" /> Profil TikTok en direct
             </div>
             <div className="tiktok-wrap">
-              <TikTokEmbed username={tiktokUsername} />
+              <TikTokEmbed username={tiktokUsername} videoId={embeds.tiktokVideoId} />
             </div>
           </div>
 
