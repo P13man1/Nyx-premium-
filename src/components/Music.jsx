@@ -3,9 +3,7 @@ import { useReveal } from "../lib/hooks.js";
 
 export default function Music() {
   const ref = useReveal();
-  const streaming = socials.filter((s) =>
-    ["Spotify", "Apple Music", "Audiomack", "YouTube"].includes(s.platform)
-  );
+  const streaming = socials.filter((s) => !s.soon && s.url);
 
   return (
     <section className="section" id="musique">

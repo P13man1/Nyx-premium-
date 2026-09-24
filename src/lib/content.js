@@ -34,7 +34,9 @@ export const embeds = {
 // Nom d'utilisateur TikTok (sans @) — sert à afficher le vrai profil.
 export const tiktokUsername = "fiok_228";
 
-// Réseaux & plateformes
+// Réseaux & plateformes.
+// Les plateformes marquées `soon: true` s'affichent en « Bientôt ».
+// Pour les activer : ajoute `url` + `handle` et enlève `soon`.
 export const socials = [
   {
     platform: "TikTok",
@@ -50,6 +52,10 @@ export const socials = [
     icon: "youtube",
     cta: "S'abonner",
   },
+  { platform: "Spotify", icon: "spotify", soon: true },
+  { platform: "Instagram", icon: "instagram", soon: true },
+  { platform: "Apple Music", icon: "applemusic", soon: true },
+  { platform: "X (Twitter)", icon: "x", soon: true },
 ];
 
 // Galerie

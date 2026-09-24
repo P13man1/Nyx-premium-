@@ -499,3 +499,33 @@ img { display: block; max-width: 100%; }
   .feeds { grid-template-columns: 1fr; }
   .tt-fallback { min-height: 460px; }
 }
+
+/* ---------- Coming-soon platform cards ---------- */
+.social-card.soon {
+  position: relative;
+  opacity: 0.55;
+  cursor: default;
+  border-style: dashed;
+}
+.social-card.soon:hover {
+  transform: none;
+  border-color: var(--line);
+  background: transparent;
+}
+.social-card.soon .sc-logo { color: var(--ink-dim); }
+.social-card.soon .go { color: var(--ink-dim); }
+.soon-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+.sc-applemusic:hover .sc-logo { color: #fa2d48; }
+.sc-x:hover .sc-logo { color: #fff; }

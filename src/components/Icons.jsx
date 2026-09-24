@@ -32,11 +32,29 @@ export function SpotifyIcon(props) {
   );
 }
 
+export function AppleMusicIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.23-3.91-1.22-1.78-3.11-2.02-3.78-2.05-1.61-.16-3.14.95-3.96.95-.81 0-2.07-.93-3.41-.9-1.75.03-3.37 1.02-4.27 2.59-1.82 3.16-.47 7.84 1.31 10.41.87 1.26 1.9 2.67 3.25 2.62 1.3-.05 1.79-.84 3.37-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.28-1.28 3.14-2.55.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.72-1.04-2.75-4.13zM14.48 4.5c.72-.87 1.2-2.08 1.07-3.28-1.03.04-2.28.69-3.02 1.56-.66.77-1.24 2-1.08 3.18 1.15.09 2.32-.58 3.03-1.46z" />
+    </svg>
+  );
+}
+
+export function XIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M18.9 1.6h3.68l-8.04 9.19L24 22.4h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.6h7.6l5.24 6.93L18.9 1.6zm-1.29 18.6h2.04L6.48 3.71H4.29L17.61 20.2z" />
+    </svg>
+  );
+}
+
 const MAP = {
   tiktok: TikTokIcon,
   youtube: YouTubeIcon,
   instagram: InstagramIcon,
   spotify: SpotifyIcon,
+  applemusic: AppleMusicIcon,
+  x: XIcon,
 };
 
 export default function PlatformIcon({ name, ...props }) {

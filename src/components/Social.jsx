@@ -16,24 +16,38 @@ export default function Social() {
         </div>
 
         <div className="social-grid reveal" ref={ref}>
-          {socials.map((s) => (
-            <a
-              className={`social-card sc-${s.icon}`}
-              key={s.platform}
-              href={s.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="sc-logo">
-                <PlatformIcon name={s.icon} />
-              </span>
-              <div>
-                <div className="plat">{s.platform}</div>
-                <div className="handle">{s.handle}</div>
+          {socials.map((s) =>
+            s.soon ? (
+              <div className={`social-card soon sc-${s.icon}`} key={s.platform}>
+                <span className="soon-badge">Bientôt</span>
+                <span className="sc-logo">
+                  <PlatformIcon name={s.icon} />
+                </span>
+                <div>
+                  <div className="plat">{s.platform}</div>
+                  <div className="handle">À venir</div>
+                </div>
+                <div className="go">Bientôt disponible</div>
               </div>
-              <div className="go">{s.cta} →</div>
-            </a>
-          ))}
+            ) : (
+              <a
+                className={`social-card sc-${s.icon}`}
+                key={s.platform}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="sc-logo">
+                  <PlatformIcon name={s.icon} />
+                </span>
+                <div>
+                  <div className="plat">{s.platform}</div>
+                  <div className="handle">{s.handle}</div>
+                </div>
+                <div className="go">{s.cta} →</div>
+              </a>
+            )
+          )}
         </div>
 
         <div className="feeds">
