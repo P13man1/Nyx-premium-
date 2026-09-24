@@ -6,7 +6,6 @@ export default function Nav() {
           FI<span>O</span>K
         </a>
         <div className="nav-menu">
-          <a href="#about">À propos</a>
           <a href="#musique">Musique</a>
           <a href="#galerie">Galerie</a>
           <a href="#reseaux">Réseaux</a>

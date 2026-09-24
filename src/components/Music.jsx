@@ -11,7 +11,7 @@ export default function Music() {
     <section className="section" id="musique">
       <div className="wrap">
         <div className="section-head">
-          <span className="num">02</span>
+          <span className="num">01</span>
           <h2>Musique</h2>
         </div>
 

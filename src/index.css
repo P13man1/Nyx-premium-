@@ -398,3 +398,83 @@ img { display: block; max-width: 100%; }
   .newsletter-row { flex-direction: column; }
   .section { padding: 64px 0; }
 }
+
+/* ---------- Intro: full-opacity playback with sound ---------- */
+.intro video.playing { opacity: 1; }
+
+/* ---------- Platform logos on cards ---------- */
+.sc-logo {
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--ink);
+  display: inline-flex;
+  transition: color 0.2s, transform 0.2s;
+}
+.social-card:hover .sc-logo { transform: translateY(-2px); }
+.sc-tiktok:hover .sc-logo { color: #fff; }
+.sc-tiktok:hover { border-color: #25f4ee; }
+.sc-youtube:hover .sc-logo { color: #ff0033; }
+.sc-youtube:hover { border-color: #ff0033; }
+.sc-instagram:hover .sc-logo { color: #e1306c; }
+.sc-spotify:hover .sc-logo { color: #1db954; }
+.social-card { min-height: 190px; }
+
+/* ---------- Live feeds (TikTok / YouTube) ---------- */
+.feeds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  margin-top: 40px;
+  align-items: start;
+}
+.feed-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Anton", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 16px;
+}
+.feed-label svg { font-size: 1.3rem; color: var(--red); }
+.tiktok-wrap {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 560px;
+}
+.tiktok-wrap iframe { width: 100% !important; }
+.yt-wrap {
+  position: relative;
+  aspect-ratio: 16/9;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.yt-wrap iframe { width: 100%; height: 100%; border: 0; }
+.yt-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 50px 24px;
+  background: var(--bg-2);
+  min-height: 260px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.yt-card:hover { border-color: #ff0033; transform: translateY(-3px); }
+.yt-card svg { font-size: 3.4rem; color: #ff0033; }
+.yt-handle { font-family: "Anton", sans-serif; font-size: 1.3rem; }
+.yt-go { color: var(--red); font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .feeds { grid-template-columns: 1fr; }
+  .tiktok-wrap { min-height: 640px; }
+}

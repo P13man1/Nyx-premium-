@@ -7,7 +7,7 @@ export default function Gallery() {
     <section className="section" id="galerie">
       <div className="wrap">
         <div className="section-head">
-          <span className="num">03</span>
+          <span className="num">02</span>
           <h2>Galerie</h2>
         </div>
         <div className="gallery reveal" ref={ref}>

@@ -116,7 +116,7 @@ export default function Connect() {
     <section className="section" id="contact">
       <div className="wrap">
         <div className="section-head">
-          <span className="num">05</span>
+          <span className="num">04</span>
           <h2>Reste connecté</h2>
         </div>
         <div className="connect-grid reveal" ref={ref}>
